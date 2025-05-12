@@ -13,9 +13,9 @@ function get_product()
             $product[$index]["productNo"] = $row["productNo"];
 
             //Transform the name fields from the DB to "First Last" format
-            $product[$index]["Name"] = $row["FirstName"] . " " . $row["LastName"];
-            $product[$index]["EMail"] = $row["EMail"];
-            $product[$index]["FavNum"] = $row["FavoriteNum"];
+            $product[$index]["ProductNo"] = $row["ProductNo"];
+            $product[$index]["Name"] = $row["Name"];
+            $product[$index]["Type"] = $row["Type"];
             $index++;
         }
     }
@@ -30,11 +30,11 @@ function get_product_name($product_no)
     if($product && $product->num_rows === 1)
     {
         $product_info = mysqli_fetch_assoc($product);
-        return $product_info["FirstName"] . " " . $user_info["LastName"];
+        return $product_info["ProductNo"];
     }
     else
     {
-        return "No such user or multiple users found.";
+        return "No such product or multiple products found.";
     }
 }
 
