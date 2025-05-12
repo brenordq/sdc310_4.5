@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/sdc310_week4_gp3/view/display_users.php",
+            "url": "http://localhost/sdc310_week4_gp/view/display_products.php",
             "webRoot": "${workspaceFolder}"
         }
     ]
