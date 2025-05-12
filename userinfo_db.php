@@ -2,7 +2,7 @@
 require_once('database.php');
 
 //Get all entries in the userinfo table
-function get_all_users()
+function get_all_product()
 {
     //query for all users
     $conn = get_db_conn();
@@ -11,7 +11,7 @@ function get_all_users()
     return $result;
 }
 
-function get_user($user_no)
+function get_product($product_no)
 {
     $conn = get_db_conn();
     $query = "SELECT * FROM userinfo WHERE UserNo=$user_no";
