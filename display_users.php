@@ -1,32 +1,30 @@
 <?php
-    require_once('../controller/userinfo_controller.php');
-    $user_arr = get_users();
+    require_once('../controller/productinfo_controller.php');
+    $user_arr = get_product();
 ?>
 <html>
     <head>
-        <title>Week 4 GP3 - Breanna Nordquist</title>
+        <title>Week 4 GP5 - Breanna Nordquist</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     
     <body>
-        <h2>Current Users:</h2>
+        <h2>Current Products:</h2>
         <table>
             <tr style="font-size:large;">
-                <th>User #</th>
-                <th>Full Name</th>
-                <th>E-Mail</th>
-                <th>Favorite Number</th>
+                <th>Product #</th>
+                <th>Name</th>
+                <th>Type</th>
             </tr>
             
             <?php foreach($user_arr as $user):;?>
                 <tr>
-                    <td><?php echo $user["UserNo"];?></td>
+                    <td><?php echo $user["ProductNo"];?></td>
                     <td><?php echo $user["Name"];?></td>
-                    <td><?php echo $user["EMail"];?></td>
-                    <td><?php echo $user["FavNum"];?></td>
+                    <td><?php echo $user["Type"];?></td>
                 </tr>
             <?php endforeach;?>
         </table>
-        <a href="find_user.php">Find a User</a>
+        <a href="find_product.php">Find a Product</a>
     </body>
 </html>
