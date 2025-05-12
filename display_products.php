@@ -19,7 +19,7 @@
             
             <?php foreach($product_arr as $product):;?>
                 <tr>
-                    <td><?php echo $product["ProductNo"];?></td>
+                    <td><?php echo $product["productNo"];?></td>
                     <td><?php echo $product["Name"];?></td>
                     <td><?php echo $product["Type"];?></td>
                 </tr>
