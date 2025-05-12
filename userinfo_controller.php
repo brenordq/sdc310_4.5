@@ -1,36 +1,36 @@
 <?php
-require_once('../model/userinfo_db.php');
+require_once('../model/productinfo_db.php');
 
-function get_users()
+function get_product()
 {
-    $user_rows = get_all_users();
-    $users = array();
+    $product_rows = get_all_product();
+    $product = array();
 
-    if ($user_rows) {
+    if ($product_rows) {
         $index = 0;
         //If query was successful, fill the users array
-        while($row = mysqli_fetch_array($user_rows)) {
-            $users[$index]["UserNo"] = $row["UserNo"];
+        while($row = mysqli_fetch_array($product_rows)) {
+            $product[$index]["productNo"] = $row["productNo"];
 
             //Transform the name fields from the DB to "First Last" format
-            $users[$index]["Name"] = $row["FirstName"] . " " . $row["LastName"];
-            $users[$index]["EMail"] = $row["EMail"];
-            $users[$index]["FavNum"] = $row["FavoriteNum"];
+            $product[$index]["Name"] = $row["FirstName"] . " " . $row["LastName"];
+            $product[$index]["EMail"] = $row["EMail"];
+            $product[$index]["FavNum"] = $row["FavoriteNum"];
             $index++;
         }
     }
 
-    return $users;
+    return $product;
 }
 
-function get_user_name($user_no)
+function get_product_name($product_no)
 {
-    $user = get_user($user_no);
+    $product = get_product($product_no);
 
-    if($user && $user->num_rows === 1)
+    if($product && $product->num_rows === 1)
     {
-        $user_info = mysqli_fetch_assoc($user);
-        return $user_info["FirstName"] . " " . $user_info["LastName"];
+        $product_info = mysqli_fetch_assoc($product);
+        return $product_info["FirstName"] . " " . $user_info["LastName"];
     }
     else
     {
