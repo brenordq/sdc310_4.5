@@ -13,7 +13,7 @@ function get_product()
             $product[$index]["productNo"] = $row["productNo"];
 
             //Transform the name fields from the DB to "First Last" format
-            $product[$index]["ProductNo"] = $row["ProductNo"];
+            $product[$index]["ProductNo"] = $row["productNo"];
             $product[$index]["Name"] = $row["Name"];
             $product[$index]["Type"] = $row["Type"];
             $index++;
@@ -30,7 +30,7 @@ function get_product_name($product_no)
     if($product && $product->num_rows === 1)
     {
         $product_info = mysqli_fetch_assoc($product);
-        return $product_info["ProductNo"];
+        return $product_info["productNo"];
     }
     else
     {
