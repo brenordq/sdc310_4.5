@@ -1,6 +1,6 @@
 <?php
     require_once('../controller/productinfo_controller.php');
-    $user_arr = get_product();
+    $product_arr = get_product();
 ?>
 <html>
     <head>
@@ -17,11 +17,11 @@
                 <th>Type</th>
             </tr>
             
-            <?php foreach($user_arr as $user):;?>
+            <?php foreach($product_arr as $product):;?>
                 <tr>
-                    <td><?php echo $user["ProductNo"];?></td>
-                    <td><?php echo $user["Name"];?></td>
-                    <td><?php echo $user["Type"];?></td>
+                    <td><?php echo $product["ProductNo"];?></td>
+                    <td><?php echo $product["Name"];?></td>
+                    <td><?php echo $product["Type"];?></td>
                 </tr>
             <?php endforeach;?>
         </table>
